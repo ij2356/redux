@@ -15,15 +15,12 @@ export const deleteTodo = (id) => {
   };
 };
 
-const reducer = (state = [""], action) => {
+const reducer = (state = [], action) => {
 	switch (action.type) {
     case ADD:
-      return [{ text: action.text, id: Date.now() }, ...state];
+      return [{ text: action.text, id: Date.now()}, ...state];
 		case DELETE:
-			return state.filter(item => item !== action.id);
-			// return state.filter((item) => {
-      //   return item !== action.id;
-      // });
+			return state.filter((item) => item.id.toString() !== action.id.toString());
 		default: return state;
   }
 }
@@ -31,5 +28,8 @@ const reducer = (state = [""], action) => {
 
 const store = createStore(reducer);
 
+store.subscribe(() => {
+	console.log(store.getState());
+})
 
 export default store;
