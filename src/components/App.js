@@ -2,6 +2,9 @@
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import "../css/reset.css";
+import '../css/inline.css';
+import '../css/index.css';
 import Home from "../router/Home.jsx";
 import Detail from "../router/Detail.jsx";
 

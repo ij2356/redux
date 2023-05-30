@@ -9,7 +9,7 @@ function ToDo({ text, onBtnClick, id, key }) {
   
   return (
     <li id={id}>
-     <Link to = {`/${id}`}> {text}</Link>
+     <Link className="mg-r-10" to = {`/${id}`} id = {id}> {text}</Link>
       <button onClick={onBtnClick}>DEL</button>
     </li>
   );

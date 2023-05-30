@@ -17,7 +17,7 @@ const Home = (todos) => {
 
   return (
     <>
-      <h1>ToDos</h1>
+      <h1 className="fs-32 mg-b-20 fw-700">ToDos</h1>
       <form>
         <input type="text" value={text} onChange={onChange} />
         <button type="submit" onClick={onSubmit}>
