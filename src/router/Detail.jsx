@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 const Detail = ({ toDos, onBtnClick }) => {
 	const id1 = useParams().id;
 	const toDo = toDos.find((toDo) => toDo.id === parseInt(id1));
-
+  
 	const done = (e) => {
 		console.log(id1);
 	}

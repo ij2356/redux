@@ -5,8 +5,6 @@ import store from "../store/store";
 import ToDo from "../components/todo";
 
 const Home = (todos) => {
-  const localTodo = JSON.parse(localStorage.getItem("store"));
-  
 
   //인풋
   const [text, setText] = useState("");
@@ -22,6 +20,8 @@ const Home = (todos) => {
       return
     }
     store.dispatch(addTodo(text));
+
+    localStorage.setItem("store", JSON.stringify(store.getState()));
   };
 
   return (

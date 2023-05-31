@@ -4,6 +4,10 @@ const ADD = "ADD"
 const DELETE = "DELETE"
 
 
+const initcheck = JSON.stringify(localStorage.getItem("store"));
+const check = JSON.parse(JSON.parse(initcheck));
+console.log(typeof check);
+
 
 export const addTodo = (text) => {
 	return {
@@ -30,8 +34,9 @@ const reducer = (state = [], action) => {
 
 const store = createStore(reducer);
 store.subscribe(() => {
-	localStorage.setItem("store", JSON.stringify(store.getState()));
-	console.log(localStorage.getItem("store"));
+	console.log("----------------------------");
+	console.log(store.getState());
+	console.log("----------------------------");
 })
 
 export default store;
