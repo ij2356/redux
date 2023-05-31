@@ -5,22 +5,31 @@ import store from "../store/store";
 import ToDo from "../components/todo";
 
 const Home = (todos) => {
+  const localTodo = JSON.parse(localStorage.getItem("store"));
+  
+
   //인풋
   const [text, setText] = useState("");
+  
   const onChange = (e) => {
     setText(e.target.value);
   };
+
   const onSubmit = (e) => {
     e.preventDefault();
+    if (text === "") {
+      alert("빈값입니다");
+      return
+    }
     store.dispatch(addTodo(text));
   };
 
   return (
     <>
       <h1 className="fs-32 mg-b-20 fw-700">ToDos</h1>
-      <form>
+      <form className = "HomeForm">
         <input type="text" value={text} onChange={onChange} />
-        <button type="submit" onClick={onSubmit}>
+        <button className="btn mg-l-10" type="submit" onClick={onSubmit}>
           제출
         </button>
       </form>

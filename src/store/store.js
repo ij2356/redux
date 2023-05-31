@@ -3,6 +3,8 @@ import { createStore } from "redux";
 const ADD = "ADD"
 const DELETE = "DELETE"
 
+
+
 export const addTodo = (text) => {
 	return {
 		type: ADD, 
@@ -27,9 +29,9 @@ const reducer = (state = [], action) => {
 
 
 const store = createStore(reducer);
-
 store.subscribe(() => {
-	console.log(store.getState());
+	localStorage.setItem("store", JSON.stringify(store.getState()));
+	console.log(localStorage.getItem("store"));
 })
 
 export default store;

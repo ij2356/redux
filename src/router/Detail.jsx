@@ -14,8 +14,11 @@ const Detail = ({ toDos, onBtnClick }) => {
 	const done = (e) => {
 		console.log(id1);
 	}
-	const detailDelete = () => {
-		done();	
+  const detailDelete = (e) => {
+    e.preventDefault();
+    store.dispatch(deleteTodo(id1));
+    alert("삭제완료");
+    window.history.back();
 	}
 
   return (
@@ -25,7 +28,7 @@ const Detail = ({ toDos, onBtnClick }) => {
       <p>
         당신의 오늘 할일은 : <span className="fs-20 fw-500">{toDo ? toDo.text : "새로고침되었습니다 홈으로 돌아가세요"}</span>
       </p>
-      <a onClick={detailDelete}>삭제</a>
+      <button className="mg-t-20 btn w-100" onClick={detailDelete}>삭제</button>
     </>
   );
 };

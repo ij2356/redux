@@ -1,21 +1,14 @@
-body {
-  padding:20px;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+body { padding:20px; margin: 0; } 
+body * { box-sizing: border-box; } 
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
-input[type='text']{padding:10px 0;}
+input[type='text'] { height: 40px;padding:0 10px; } 
+.btn { height: 40px; } 
+
+
 /*Home.jsx*/
-.todoUl{margin-top: 20px;width: 500px;border-top:1px solid #191919;}
-.todoUl a:hover{font-weight: 700;}
-.todoUl li{padding: 10px 0;border-bottom:1px solid #191919;}
-.todoUl li:hover{background:#eee;}
+.HomeForm{display: flex;margin-bottom: 20px;}
+.todoUl { margin-top: 20px; width: 500px; border-top:1px solid #191919; } 
+.todoUl a:hover { font-weight: 700;color:#0000fa } 
+.todoUl li { padding: 10px; border-bottom:1px solid #191919;} 
+.todoUl li:hover { background:#eee; } 
