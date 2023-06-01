@@ -9,6 +9,7 @@ const check = JSON.parse(JSON.parse(initcheck));
 console.log(typeof check);
 
 
+
 export const addTodo = (text) => {
 	return {
 		type: ADD, 
@@ -21,7 +22,7 @@ export const deleteTodo = (id) => {
   };
 };
 
-const reducer = (state = [], action) => {
+const reducer = (state = check ? check : [], action) => {
 	switch (action.type) {
     case ADD:
       return [{ text: action.text, id: Date.now()}, ...state];
@@ -34,9 +35,8 @@ const reducer = (state = [], action) => {
 
 const store = createStore(reducer);
 store.subscribe(() => {
-	console.log("----------------------------");
-	console.log(store.getState());
-	console.log("----------------------------");
+	
+	localStorage.setItem("store", JSON.stringify(store.getState()));
 })
 
 export default store;
